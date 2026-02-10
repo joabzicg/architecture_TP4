@@ -1,0 +1,40 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{siunitx}
+
+\begin{document}
+
+\section*{Exercice 4 -- Q10}
+\textbf{Q10 :} Quelle puissance en mW consomme chaque processeur à la fréquence maximale ?
+
+\subsection*{Données}
+\begin{itemize}
+  \item Cortex A7 : \SI{0.10}{mW/MHz}, $f_{\max}=\SI{1.0}{GHz}=\SI{1000}{MHz}$.
+  \item Cortex A15 : \SI{0.20}{mW/MHz}, $f_{\max}=\SI{2.5}{GHz}=\SI{2500}{MHz}$.
+\end{itemize}
+
+\subsection*{Calcul}
+La puissance à fréquence maximale est donnée par :
+\[
+P = \left(\frac{\mathrm{mW}}{\mathrm{MHz}}\right)\times f\,(\mathrm{MHz}).
+\]
+
+\paragraph{Cortex A7}
+\[
+P_{A7} = 0.10\ \frac{\mathrm{mW}}{\mathrm{MHz}} \times 1000\ \mathrm{MHz} = \SI{100}{mW}.
+\]
+
+\paragraph{Cortex A15}
+\[
+P_{A15} = 0.20\ \frac{\mathrm{mW}}{\mathrm{MHz}} \times 2500\ \mathrm{MHz} = \SI{500}{mW}.
+\]
+
+\subsection*{Réponse}
+\begin{itemize}
+  \item Cortex A7 : \SI{100}{mW} à $\SI{1.0}{GHz}$.
+  \item Cortex A15 : \SI{500}{mW} à $\SI{2.5}{GHz}$.
+\end{itemize}
+
+\end{document}

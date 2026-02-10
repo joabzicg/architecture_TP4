@@ -1,0 +1,131 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{hyperref}
+
+\geometry{margin=2.2cm}
+\graphicspath{{figs/q4/}}
+\sisetup{locale=FR}
+
+\title{TP4 -- Exercice 4 (Q4)\\\small Evaluation de performances (Cortex A7) en fonction de la taille des caches L1}
+\author{\small Nom: \underline{\hspace{5cm}} \qquad Groupe: \underline{\hspace{2cm}}}
+\date{\small Ann\'ee 2026}
+
+\begin{document}
+\maketitle
+
+\section{Objectif}
+Le but de la question Q4 est d'\'evaluer les performances d'un coeur \emph{type Cortex A7} (mod\`ele RISCV dans gem5 en \emph{out-of-order}) en faisant varier simultan\'ement la taille des caches L1 (instructions et donn\'ees) de \SI{1}{kB} \`a \SI{16}{kB}, avec un cache L2 fix\'e \`a \SI{512}{kB}. On compare les r\'esultats sur deux applications MiBench : \textbf{Dijkstra} et \textbf{Blowfish}.
+
+\section{Configuration et m\'ethodologie}
+\subsection{Param\`etres processeur / caches}
+Pour le coeur ``A7'' (Tableau 12 du sujet), on utilise :
+\begin{itemize}
+\item CPU : \texttt{DerivO3CPU} (gem5 classic), mode \texttt{timing}.
+\item Pr\'ediction : \texttt{BiModeBP} avec \texttt{BTBEntries=256}.
+\item Largeurs : fetch=2, decode=2, issue=4, commit=2 ; ROB=2 ; LQ=8 ; SQ=8 ; fetchQueue=8.
+\item Lignes de cache : \SI{32}{B} (pour \`eviter l'erreur de fetch buffer, \texttt{fetchBufferSize} a \`et\'e mis \`a \SI{32}{B}).
+\item L2 : \SI{512}{kB}, assoc=8, bloc=\SI{32}{B} (fixe).
+\item L1I et L1D : assoc=2, bloc=\SI{32}{B}, taille variable : \{1,2,4,8,16\}\,kB.
+\end{itemize}
+
+\subsection{Benchmarks et entr\'ees}
+\begin{itemize}
+\item \textbf{Dijkstra}: ex\'ecution de \texttt{dijkstra\_small} avec \texttt{input.dat} (MiBench).
+\item \textbf{Blowfish}: on a mesur\'e \texttt{bf} en chiffrement (\texttt{e}) + d\'echiffrement (\texttt{d}) sur \texttt{input\_small.asc}. Les courbes ``Blowfish'' correspondent \`a l'agr\'egation \emph{enc+dec} (somme des cycles et des instructions).
+\end{itemize}
+
+\subsection{Commande gem5 (param\`etres d'ex\'ecution)}
+Les simulations ont \`et\'e lanc\'ees via un script pour balayer les tailles de L1.
+\begin{verbatim}
+PYTHONUTF8=1 /opt/gem5/build/RISCV/gem5.opt -r -d <outdir> \
+  gem5/se_A7_q4.py --l1 <1kB|2kB|4kB|8kB|16kB> \
+  --maxinsts 0 \
+  --cmd <binary> --options <args>
+\end{verbatim}
+Le script utilis\'e est \texttt{scripts/run\_q4\_a7.sh}. Les r\'esultats bruts sont dans \texttt{m5out/q4/A7/}.
+
+\paragraph{Remarque (comparaison juste).}
+Pour comparer les tailles de cache de mani\`ere \`equitable, les ex\'ecutions sont faites \emph{jusqu'\`a la fin du programme} (\texttt{--maxinsts 0}). Les runs interrompus (ex: limite d'instructions, interruption utilisateur) sont marqu\'es comme incomplets et ne sont pas utilis\'es pour choisir la ``meilleure'' taille L1 dans la synth\`ese.
+
+\section{R\'esultats}
+\subsection{Synth\`ese (meilleure configuration)}
+La table suivante r\'esume la configuration L1 donnant les meilleurs r\'esultats (crit\`ere : cycles minimaux).
+
+\begin{center}
+\input{tables/q4_a7_summary.tex}
+\end{center}
+
+\subsection{Dijkstra}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{a7_dijkstra_cycles.png}
+\caption{Dijkstra (A7) : cycles en fonction de la taille L1.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{a7_dijkstra_ipc.png}
+\caption{Dijkstra (A7) : IPC en fonction de la taille L1.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{a7_dijkstra_dl1_miss.png}
+\caption{Dijkstra (A7) : miss rate DL1.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{a7_dijkstra_il1_miss.png}
+\caption{Dijkstra (A7) : miss rate IL1.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{a7_dijkstra_bp_mispred.png}
+\caption{Dijkstra (A7) : taux de mauvaise pr\'ediction (branches conditionnelles) vs taille L1.}
+\end{figure}
+
+\paragraph{Analyse (Dijkstra).}
+Quand on augmente L1, on voit en g\'en\'eral une baisse des miss rates (surtout DL1), ce qui r\'eduit les stall et am\'eliore l'IPC. Par contre l'am\'elioration n'est pas lin\'eaire : au-del\`a d'une certaine taille, les gains deviennent faibles (on a moins de misses \`a r\'ecup\'erer). Sur Dijkstra, la partie donn\'ees est importante (acc\`es au graphe), donc DL1 est le facteur qui fait le plus bouger les cycles.
+Le taux de mauvaise pr\'ediction des branches varie peu avec la taille de L1 : la pr\'ediction est surtout li\'ee au comportement de contr\^ole du programme, pas \`a la hi\'erarchie m\'emoire. Ainsi, les gains observ\'es proviennent majoritairement de la r\'eduction des misses (DL1/IL1) plut\^ot que d'un changement de la qualit\'e de pr\'ediction.
+
+\subsection{Blowfish (enc+dec)}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{a7_blowfish_cycles.png}
+\caption{Blowfish (A7) : cycles (chiffrement+d\'echiffrement) vs L1.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{a7_blowfish_ipc.png}
+\caption{Blowfish (A7) : IPC (enc+dec) vs L1.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{a7_blowfish_dl1_miss.png}
+\caption{Blowfish (A7) : miss rate DL1 (enc+dec).}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{a7_blowfish_il1_miss.png}
+\caption{Blowfish (A7) : miss rate IL1 (enc+dec).}
+\end{figure}
+
+\paragraph{Analyse (Blowfish).}
+Blowfish est plus ``compute-bound'' que Dijkstra, mais il a quand m\^eme des acc\`es r\'eguliers (tables + buffers d'entr\'ee/sortie). On observe typiquement que l'IPC augmente avec L1 puis se stabilise : \`a partir d'une taille suffisante, la majorit\'e du temps est pass\'ee dans le pipeline et non en attente m\'emoire. Dans nos r\'esultats, la taille optimale est celle qui minimise les cycles totaux enc+dec.
+
+\section{Conclusion}
+Pour le coeur A7, augmenter L1 aide clairement au d\'ebut (miss rates en baisse, IPC en hausse). Ensuite, les gains saturent : il y a un compromis entre taille du cache et b\'en\'efice r\'eel sur l'application. La meilleure taille n'est pas forc\'ement la plus grande pour les deux benchmarks, donc on choisit la configuration en regardant directement les cycles/IPC obtenus.
+
+\end{document}

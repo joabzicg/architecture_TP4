@@ -1,0 +1,22 @@
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 23.0.0.1
+gem5 compiled Jan 26 2026 00:01:36
+gem5 started Feb 10 2026 20:24:21
+gem5 executing on notebook, pid 79541
+command line: /opt/gem5/build/RISCV/gem5.opt -r -d /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_4kB/dijkstra /home/xfalc/arq/TP4_EX4/gem5/se_A7_q4.py --l1 4kB --maxinsts 10000000 --cmd /home/xfalc/arq/TP4_EX4/bench/bin/dijkstra_small --options /home/xfalc/arq/TP4_EX4/bench/mibench/network/dijkstra/input.dat
+
+Global frequency set at 1000000000000 ticks per second
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+system.remote_gdb: Listening for connections on port 7000
+src/sim/simulate.cc:194: info: Entering event queue @ 0.  Starting simulation...
+src/sim/syscall_emul.cc:85: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.hh:1014: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/xfalc/arq/TP4_EX4/bench/bin/dijkstra_small'
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:74: warn: ignoring syscall mprotect(...)
+Shortest path is 1 in cost. Path is:  0 41 45 51 50
+Exiting @ tick 36190719000 because a thread reached the max instruction count

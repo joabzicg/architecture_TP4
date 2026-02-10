@@ -1,0 +1,10 @@
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 23.0.0.1
+gem5 compiled Jan 26 2026 00:01:36
+gem5 started Feb 10 2026 19:55:20
+gem5 executing on notebook, pid 75055
+command line: /opt/gem5/build/RISCV/gem5.opt -r -d m5out/hello gem5/hello.py
+
+hello from gem5 script

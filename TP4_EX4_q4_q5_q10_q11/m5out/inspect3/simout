@@ -1,0 +1,10 @@
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 23.0.0.1
+gem5 compiled Jan 26 2026 00:01:36
+gem5 started Feb 10 2026 20:25:30
+gem5 executing on notebook, pid 79829
+command line: /opt/gem5/build/RISCV/gem5.opt -r -d m5out/inspect3 -c 'from m5.objects import DerivO3CPU; c=DerivO3CPU(); ks=[k for k in c._params.keys() if '"'"'progress'"'"' in k.lower()]; print(ks)'
+
+['progress_interval']

@@ -1,0 +1,114 @@
+[Q4][A7] gem5: /opt/gem5/build/RISCV/gem5.opt
+[Q4][A7] cfg : /home/xfalc/arq/TP4_EX4/gem5/se_A7_q4.py
+[Q4][A7] out : /home/xfalc/arq/TP4_EX4/m5out/q4/A7
+[Q4][A7] maxinsts: 0
+[Q4][A7] progress: 50
+[Q4][A7] skip_done: 0
+[Q4][A7] sizes: 16kB
+[Q4][A7] calibrate: 1
+\n=== L1=16kB ===
+[run ] 20:59:37 outdir=/home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/dijkstra
+Global frequency set at 1000000000000 ticks per second
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+system.remote_gdb: Listening for connections on port 7000
+Redirecting stdout and stderr to /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/dijkstra/simout
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 23.0.0.1
+gem5 compiled Jan 26 2026 00:01:36
+gem5 started Feb 10 2026 20:59:37
+gem5 executing on notebook, pid 89232
+command line: /opt/gem5/build/RISCV/gem5.opt -r -d /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/dijkstra /home/xfalc/arq/TP4_EX4/gem5/se_A7_q4.py --l1 16kB --maxinsts 0 --progress 50 --cmd /home/xfalc/arq/TP4_EX4/bench/bin/dijkstra_small --options /home/xfalc/arq/TP4_EX4/bench/mibench/network/dijkstra/input.dat
+
+src/sim/simulate.cc:194: info: Entering event queue @ 0.  Starting simulation...
+src/sim/syscall_emul.cc:85: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.hh:1014: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/xfalc/arq/TP4_EX4/bench/bin/dijkstra_small'
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:74: warn: ignoring syscall mprotect(...)
+20000000000: Event_61: system.cpu progress event, total committed:5957371, progress insts committed: 5957371, IPC: 0.297869
+40000000000: Event_61: system.cpu progress event, total committed:11726463, progress insts committed: 5769092, IPC: 0.288455
+60000000000: Event_61: system.cpu progress event, total committed:17323461, progress insts committed: 5596998, IPC: 00.27985
+80000000000: Event_61: system.cpu progress event, total committed:22860438, progress insts committed: 5536977, IPC: 0.276849
+100000000000: Event_61: system.cpu progress event, total committed:28413967, progress insts committed: 5553529, IPC: 0.277676
+120000000000: Event_61: system.cpu progress event, total committed:34039537, progress insts committed: 5625570, IPC: 0.281278
+Exiting @ tick 130194337000 because exiting with last active thread context
+[done] 21:02:43 rc=0 elapsed=186s outdir=/home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/dijkstra
+[run ] 21:02:43 outdir=/home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_enc
+Global frequency set at 1000000000000 ticks per second
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+system.remote_gdb: Listening for connections on port 7000
+Redirecting stdout and stderr to /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_enc/simout
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 23.0.0.1
+gem5 compiled Jan 26 2026 00:01:36
+gem5 started Feb 10 2026 21:02:43
+gem5 executing on notebook, pid 90193
+command line: /opt/gem5/build/RISCV/gem5.opt -r -d /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_enc /home/xfalc/arq/TP4_EX4/gem5/se_A7_q4.py --l1 16kB --maxinsts 0 --progress 50 --cmd /home/xfalc/arq/TP4_EX4/bench/bin/bf --options e /home/xfalc/arq/TP4_EX4/bench/mibench/security/blowfish/input_small.asc /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_enc/output_small.enc 1234567890abcdeffedcba0987654321
+
+src/sim/simulate.cc:194: info: Entering event queue @ 0.  Starting simulation...
+src/sim/syscall_emul.cc:85: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.hh:1014: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/xfalc/arq/TP4_EX4/bench/bin/bf'
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:74: warn: ignoring syscall mprotect(...)
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+20000000000: Event_61: system.cpu progress event, total committed:5947234, progress insts committed: 5947234, IPC: 0.297362
+40000000000: Event_61: system.cpu progress event, total committed:11942659, progress insts committed: 5995425, IPC: 0.299771
+60000000000: Event_61: system.cpu progress event, total committed:17937351, progress insts committed: 5994692, IPC: 0.299735
+80000000000: Event_61: system.cpu progress event, total committed:23933172, progress insts committed: 5995821, IPC: 0.299791
+100000000000: Event_61: system.cpu progress event, total committed:29927675, progress insts committed: 5994503, IPC: 0.299725
+120000000000: Event_61: system.cpu progress event, total committed:35923765, progress insts committed: 5996090, IPC: 0.299804
+140000000000: Event_61: system.cpu progress event, total committed:41917712, progress insts committed: 5993947, IPC: 0.299697
+160000000000: Event_61: system.cpu progress event, total committed:47913618, progress insts committed: 5995906, IPC: 0.299795
+Exiting @ tick 172148512000 because exiting with last active thread context
+[done] 21:06:46 rc=0 elapsed=243s outdir=/home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_enc
+[run ] 21:06:46 outdir=/home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_dec
+Global frequency set at 1000000000000 ticks per second
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+system.remote_gdb: Listening for connections on port 7000
+Redirecting stdout and stderr to /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_dec/simout
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 23.0.0.1
+gem5 compiled Jan 26 2026 00:01:36
+gem5 started Feb 10 2026 21:06:46
+gem5 executing on notebook, pid 91692
+command line: /opt/gem5/build/RISCV/gem5.opt -r -d /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_dec /home/xfalc/arq/TP4_EX4/gem5/se_A7_q4.py --l1 16kB --maxinsts 0 --progress 50 --cmd /home/xfalc/arq/TP4_EX4/bench/bin/bf --options d /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_enc/output_small.enc /home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_dec/output_small.asc 1234567890abcdeffedcba0987654321
+
+src/sim/simulate.cc:194: info: Entering event queue @ 0.  Starting simulation...
+src/sim/syscall_emul.cc:85: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.hh:1014: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/xfalc/arq/TP4_EX4/bench/bin/bf'
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:74: warn: ignoring syscall mprotect(...)
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+20000000000: Event_61: system.cpu progress event, total committed:5944723, progress insts committed: 5944723, IPC: 0.297236
+40000000000: Event_61: system.cpu progress event, total committed:11937738, progress insts committed: 5993015, IPC: 0.299651
+60000000000: Event_61: system.cpu progress event, total committed:17930018, progress insts committed: 5992280, IPC: 0.299614
+80000000000: Event_61: system.cpu progress event, total committed:23923437, progress insts committed: 5993419, IPC: 0.299671
+100000000000: Event_61: system.cpu progress event, total committed:29915470, progress insts committed: 5992033, IPC: 0.299602
+120000000000: Event_61: system.cpu progress event, total committed:35909175, progress insts committed: 5993705, IPC: 0.299685
+140000000000: Event_61: system.cpu progress event, total committed:41900673, progress insts committed: 5991498, IPC: 0.299575
+160000000000: Event_61: system.cpu progress event, total committed:47894238, progress insts committed: 5993565, IPC: 0.299678
+Exiting @ tick 172218674000 because exiting with last active thread context
+[done] 21:10:58 rc=0 elapsed=252s outdir=/home/xfalc/arq/TP4_EX4/m5out/q4/A7/L1_16kB/blowfish_dec
+\nDone. Results in: /home/xfalc/arq/TP4_EX4/m5out/q4/A7
+\n[Q4][A7] Calibration completed. Summary:
+- L1 usado para estimativa: 16kB
+- dijkstra: simInsts=36892567 hostSeconds=185.370s hostInstRate=199025 exit='exiting with last active thread context'
+- blowfish_enc: simInsts=51552634 hostSeconds=241.950s hostInstRate=213071 exit='exiting with last active thread context'
+- blowfish_dec: simInsts=51552725 hostSeconds=250.570s hostInstRate=205738 exit='exiting with last active thread context'
+- MAXINSTS sugerido (seguro, +10%): 56707998
+- Estimativa sweep completo (5 tamanhos, 15 runs): ~79.1 min (fator 1.4x)
+  (isso é uma estimativa: a variação de cache muda ciclos e wall-time do gem5)

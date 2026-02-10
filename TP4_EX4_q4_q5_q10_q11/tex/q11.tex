@@ -1,0 +1,63 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\geometry{margin=2.2cm}
+\graphicspath{{figs/q11/}}
+\sisetup{locale=FR}
+
+\title{TP4 -- Exercice 4 (Q11)\\\small Efficacit\'e \`energ\'etique en fonction de la taille des caches L1}
+\author{\small Nom: \underline{\hspace{5cm}} \qquad Groupe: \underline{\hspace{2cm}}}
+\date{\small Ann\'ee 2026}
+
+\begin{document}
+\maketitle
+
+\section{Objectif}
+La question Q11 demande de calculer, pour chaque configuration de cache L1, l'\emph{efficacit\'e \`energ\'etique} des deux processeurs (Cortex A7 et Cortex A15) \`a leur fr\'equence maximale.
+
+\section{M\'ethode}
+D'apr\`es l'\'enonc\'e, la consommation est de \SI{0.10}{mW/MHz} pour le Cortex A7 (\SI{1.0}{GHz}) et de \SI{0.20}{mW/MHz} pour le Cortex A15 (\SI{2.5}{GHz}).
+On en d\'eduit les puissances \`a $f_{\max}$ (r\'esultat Q10) :
+\begin{itemize}
+  \item $P_{A7}=\SI{100}{mW}$
+  \item $P_{A15}=\SI{500}{mW}$
+\end{itemize}
+
+L'efficacit\'e \`energ\'etique est d\'efinie par :
+\[
+\text{Efficacit\'e \`energ\'etique} = \frac{IPC}{P\,(mW)}.
+\]
+Les valeurs d'IPC proviennent des simulations gem5 (Q4 pour A7, Q5 pour A15) effectu\'ees \emph{jusqu'\`a la fin du programme}.
+
+\section{R\'esultats}
+\subsection{Synth\`ese}
+\begin{center}
+\input{tables/q11_energy_summary.tex}
+\end{center}
+
+\subsection{Dijkstra}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.80\linewidth]{q11_energy_dijkstra.png}
+\caption{Q11 : efficacit\'e \`energ\'etique (IPC/mW) vs taille L1 (Dijkstra).}
+\end{figure}
+
+\subsection{Blowfish (enc+dec)}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.80\linewidth]{q11_energy_blowfish_total.png}
+\caption{Q11 : efficacit\'e \`energ\'etique (IPC/mW) vs taille L1 (Blowfish enc+dec).}
+\end{figure}
+
+\section{Analyse}
+Comme $P$ est fix\'e par processeur \`a $f_{\max}$, l'efficacit\'e \`energ\'etique suit directement les variations d'IPC avec la taille de L1.
+Les meilleurs points correspondent donc aux tailles de L1 qui maximisent l'IPC pour chaque application et chaque processeur.
+
+\end{document}

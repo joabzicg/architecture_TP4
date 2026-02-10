@@ -1,0 +1,13 @@
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 23.0.0.1
+gem5 compiled Jan 26 2026 00:01:36
+gem5 started Feb 10 2026 20:17:54
+gem5 executing on notebook, pid 78547
+command line: /opt/gem5/build/RISCV/gem5.opt -r -d m5out/inspect2 -c 'from m5.objects import DerivO3CPU; c=DerivO3CPU(); print('"'"'has _params'"'"', hasattr(c,'"'"'_params'"'"')); print('"'"'type'"'"', type(getattr(c,'"'"'_params'"'"',None))); print('"'"'keys'"'"', list(getattr(c,'"'"'_params'"'"',{}).keys())[:50]); print('"'"'max inst params'"'"', [k for k in getattr(c,'"'"'_params'"'"',{}).keys() if '"'"'inst'"'"' in k.lower() and '"'"'max'"'"' in k.lower()])'
+
+has _params True
+type <class 'm5.util.multidict.multidict'>
+keys ['activity', 'cacheStorePorts', 'cacheLoadPorts', 'decodeToFetchDelay', 'renameToFetchDelay', 'iewToFetchDelay', 'commitToFetchDelay', 'fetchWidth', 'fetchBufferSize', 'fetchQueueSize', 'renameToDecodeDelay', 'iewToDecodeDelay', 'commitToDecodeDelay', 'fetchToDecodeDelay', 'decodeWidth', 'iewToRenameDelay', 'commitToRenameDelay', 'decodeToRenameDelay', 'renameWidth', 'commitToIEWDelay', 'renameToIEWDelay', 'issueToExecuteDelay', 'dispatchWidth', 'issueWidth', 'wbWidth', 'fuPool', 'iewToCommitDelay', 'renameToROBDelay', 'commitWidth', 'squashWidth', 'trapLatency', 'fetchTrapLatency', 'backComSize', 'forwardComSize', 'LQEntries', 'SQEntries', 'LSQDepCheckShift', 'LSQCheckLoads', 'store_set_clear_period', 'LFSTSize', 'SSITSize', 'numRobs', 'numPhysIntRegs', 'numPhysFloatRegs', 'numPhysVecRegs', 'numPhysVecPredRegs', 'numPhysMatRegs', 'numPhysCCRegs', 'numIQEntries', 'numROBEntries']
+max inst params ['max_insts_all_threads', 'max_insts_any_thread']

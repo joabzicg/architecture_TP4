@@ -1,0 +1,24 @@
+Global frequency set at 1000000000000 ticks per second
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+system.remote_gdb: Listening for connections on port 7000
+Redirecting stdout and stderr to /home/xfalc/arq/TP4_EX4/m5out/q4/A7_nolimit_20260210/L1_2kB/blowfish_dec/simout
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 23.0.0.1
+gem5 compiled Jan 26 2026 00:01:36
+gem5 started Feb 10 2026 21:54:41
+gem5 executing on notebook, pid 100961
+command line: /opt/gem5/build/RISCV/gem5.opt -r -d /home/xfalc/arq/TP4_EX4/m5out/q4/A7_nolimit_20260210/L1_2kB/blowfish_dec /home/xfalc/arq/TP4_EX4/gem5/se_A7_q4.py --l1 2kB --maxinsts 0 --progress 10 --cmd /home/xfalc/arq/TP4_EX4/bench/bin/bf --options d /home/xfalc/arq/TP4_EX4/m5out/q4/A7_nolimit_20260210/L1_2kB/blowfish_enc/output_small.enc /home/xfalc/arq/TP4_EX4/m5out/q4/A7_nolimit_20260210/L1_2kB/blowfish_dec/output_small.asc 1234567890abcdeffedcba0987654321
+
+src/sim/simulate.cc:194: info: Entering event queue @ 0.  Starting simulation...
+src/sim/syscall_emul.cc:85: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.hh:1014: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/xfalc/arq/TP4_EX4/bench/bin/bf'
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:74: warn: ignoring syscall mprotect(...)
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+100000000000: Event_61: system.cpu progress event, total committed:25949577, progress insts committed: 25949577, IPC: 0.259496
+Exiting @ tick 198376054000 because exiting with last active thread context
