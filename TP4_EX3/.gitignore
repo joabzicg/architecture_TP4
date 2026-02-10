@@ -1,0 +1,27 @@
+# ===== gem5 outputs =====
+m5out*/
+m5out_*/
+stats.txt
+config.ini
+config.json
+simout
+simerr
+*.stats
+
+# ===== Résultats TP =====
+results*.txt
+output*
+*.out
+
+# ===== Binaires générés =====
+*.arm
+*.riscv
+*.ss
+*.o
+*.a
+
+# ===== Fichiers temporaires =====
+*.log
+*.tmp
+*~
+.core

@@ -1,0 +1,9 @@
+prog	conf	I1_miss	D1_miss	L2_miss
+normale	C1	0.09%	35.4%	5.2%
+pointer	C1	0.09%	35.6%	5.2%
+tempo	C1	0.09%	35.6%	5.2%
+unrol	C1	0.14%	35.5%	7.0%
+normale	C2	0.09%	35.5%	4.9%
+pointer	C2	0.09%	35.7%	4.9%
+tempo	C2	0.09%	35.7%	4.9%
+unrol	C2	0.14%	35.6%	6.6%

@@ -1,0 +1,9 @@
+]633;E;{   echo -e "prog\\tconf\\til1\\tdl1\\tul2"\x3b   tail -n +2 "$OUT" | while read -r prog conf il1 dl1 ul2\x3b do     awk -v p="$prog" -v c="$conf" -v il1="$il1" -v dl1="$dl1" -v ul2="$ul2" 'BEGIN{printf "%s\\t%s\\t%.3f%%\\t%.3f%%\\t%.3f%%\\n", p,c,il1*100,dl1*100,ul2*100}'\x3b   done\x3b } > "$OUTP";b9cdc79a-1366-4240-849c-090717e03636]633;Cprog	conf	il1	dl1	ul2
+normale	C1	0.038%	28.525%	46.697%
+normale	C2	0.012%	30.692%	42.335%
+pointer	C1	0.009%	29.974%	43.720%
+pointer	C2	0.009%	30.845%	42.326%
+tempo	C1	0.012%	29.974%	43.721%
+tempo	C2	0.012%	30.845%	42.326%
+unrol	C1	0.014%	30.007%	43.451%
+unrol	C2	0.014%	30.547%	42.514%

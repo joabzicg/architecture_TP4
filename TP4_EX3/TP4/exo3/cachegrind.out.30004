@@ -1,0 +1,173 @@
+desc: I1 cache:         4096 B, 32 B, direct-mapped
+desc: D1 cache:         4096 B, 32 B, 2-way associative
+desc: LL cache:         32768 B, 32 B, 4-way associative
+cmd: ./pointer
+events: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+fl=???
+fn=(below main)
+0 84 12 11 21 7 4 19 0 0
+fn=???
+0 224691 3547 2222 33878 4948 1926 92364 3672 3280
+fn=_Exit
+0 6 1 1 1 1 1 0 0 0
+fn=_IO_default_xsputn
+0 45 6 6 10 0 0 9 0 0
+fn=_IO_do_write
+0 68 10 10 18 2 2 11 0 0
+fn=_IO_doallocbuf
+0 29 6 5 9 3 1 5 1 0
+fn=_IO_file_doallocate
+0 52 7 7 13 4 1 8 1 0
+fn=_IO_file_overflow
+0 84 15 13 18 0 0 17 0 0
+fn=_IO_file_setbuf
+0 18 2 2 4 0 0 6 0 0
+fn=_IO_file_stat
+0 3 1 1 1 0 0 0 0 0
+fn=_IO_file_sync
+0 21 5 5 8 0 0 4 0 0
+fn=_IO_file_write
+0 38 5 5 9 1 1 6 1 0
+fn=_IO_file_xsputn
+0 63 7 7 14 4 1 8 1 0
+fn=_IO_flush_all
+0 171 19 19 58 19 19 34 2 1
+fn=_IO_setb
+0 29 3 3 8 1 0 8 1 1
+fn=__call_tls_dtors
+0 13 3 3 6 2 2 3 0 0
+fn=__ctype_init
+0 17 3 3 10 8 6 3 2 0
+fn=__cxa_atexit
+0 39 5 5 10 1 1 10 1 1
+fn=__cxa_finalize
+0 116 11 9 32 2 2 14 1 0
+fn=__default_morecore
+0 20 2 2 6 0 0 4 1 0
+fn=__libc_alloca_cutoff
+0 11 3 3 2 1 1 0 0 0
+fn=__libc_early_init
+0 53 8 8 11 4 3 12 4 4
+fn=__memcpy_chk
+0 24 7 7 4 0 0 0 0 0
+fn=__memmove_chk
+0 24 7 5 4 0 0 0 0 0
+fn=__mempcpy_chk
+0 24 7 7 4 0 0 0 0 0
+fn=__memset_chk
+0 26 5 4 4 0 0 0 0 0
+fn=__printf_chk
+0 72 12 12 14 8 5 30 11 11
+fn=__sigsetjmp
+0 22 5 5 5 1 1 8 1 0
+fn=__tunable_get_val
+0 839 32 11 141 80 74 36 0 0
+fn=_dl_allocate_tls_init
+0 105 13 13 31 9 4 18 1 1
+fn=_dl_audit_preinit
+0 5 1 1 2 0 0 0 0 0
+fn=_dl_catch_exception
+0 126 23 8 30 8 2 42 11 6
+fn=_dl_debug_state
+0 4 1 1 2 0 0 0 0 0
+fn=_setjmp
+0 3 1 1 0 0 0 0 0 0
+fn=bcmp
+0 27 4 4 5 1 0 0 0 0
+fn=brk
+0 18 1 1 4 0 0 2 0 0
+fn=exit
+0 7 1 1 0 0 0 2 0 0
+fn=fstat
+0 6 2 2 1 0 0 0 0 0
+fn=getrlimit
+0 10 1 1 1 0 0 0 0 0
+fn=getrusage
+0 12 1 1 2 0 0 0 0 0
+fn=index
+0 22 5 5 4 0 0 0 0 0
+fn=main
+0 187255 15 14 30111 7545 7460 10010 5003 5003
+fn=malloc
+0 49 13 11 13 5 2 7 2 0
+fn=memchr
+0 25 4 4 4 0 0 0 0 0
+fn=memcpy
+0 24 6 6 4 0 0 0 0 0
+fn=memmove
+0 24 6 6 4 0 0 0 0 0
+fn=mempcpy
+0 24 6 6 4 0 0 0 0 0
+fn=memrchr
+0 28 4 4 5 0 0 0 0 0
+fn=memset
+0 52 10 7 8 3 0 0 0 0
+fn=pnsq
+0 4010906 5 5 995101 391343 252501 5000 4552 2500
+fn=pthread_mutex_lock
+0 44 9 9 13 2 2 5 0 0
+fn=pthread_mutex_unlock
+0 34 6 6 10 0 0 3 0 0
+fn=rindex
+0 28 5 4 5 0 0 0 0 0
+fn=sbrk
+0 59 6 6 17 3 2 10 1 0
+fn=stpcpy
+0 20 3 3 4 0 0 0 0 0
+fn=stpncpy
+0 22 4 4 4 0 0 0 0 0
+fn=strcasecmp
+0 24 4 4 4 0 0 0 0 0
+fn=strcasecmp_l
+0 24 5 5 4 0 0 0 0 0
+fn=strcat
+0 20 3 3 4 0 0 0 0 0
+fn=strchrnul
+0 28 5 4 5 1 0 0 0 0
+fn=strcmp
+0 22 5 5 4 0 0 0 0 0
+fn=strcpy
+0 20 3 3 4 0 0 0 0 0
+fn=strcspn
+0 7 2 2 3 0 0 0 0 0
+fn=strlen
+0 28 4 4 5 0 0 0 0 0
+fn=strncasecmp
+0 24 5 5 4 0 0 0 0 0
+fn=strncasecmp_l
+0 24 5 5 4 1 0 0 0 0
+fn=strncmp
+0 24 5 5 4 0 0 0 0 0
+fn=strncpy
+0 22 4 4 4 0 0 0 0 0
+fn=strnlen
+0 56 10 5 10 2 2 0 0 0
+fn=strpbrk
+0 7 2 2 3 1 1 0 0 0
+fn=strspn
+0 7 2 2 3 0 0 0 0 0
+fn=wcpncpy
+0 21 3 3 4 0 0 0 0 0
+fn=wcscat
+0 21 3 3 4 0 0 0 0 0
+fn=wcschr
+0 56 8 4 10 0 0 0 0 0
+fn=wcscmp
+0 28 5 5 5 0 0 0 0 0
+fn=wcscpy
+0 19 5 5 4 0 0 0 0 0
+fn=wcslen
+0 22 3 3 4 0 0 0 0 0
+fn=wcsncpy
+0 21 3 3 4 0 0 0 0 0
+fn=wcsnlen
+0 22 5 5 4 0 0 0 0 0
+fn=wmemchr
+0 50 5 4 8 0 0 0 0 0
+fn=wmemcmp
+0 27 4 4 5 0 0 0 0 0
+fn=wmemset
+0 20 5 3 8 0 0 0 0 0
+fn=write
+0 8 2 2 2 0 0 0 0 0
+summary: 4426293 4027 2637 1059839 404021 262027 107718 13270 10808
